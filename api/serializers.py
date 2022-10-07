@@ -11,5 +11,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'password')
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
-
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ('__all__')
 
